@@ -16,6 +16,8 @@ import wheelHub
   from "../../automotive_services_website/website_Images/high_end_3d_studio_render_of_an_automotive_wheel_hub_bearing_assembly_radlager/screen.png";
 import storeView
   from "../../automotive_services_website/website_Images/Store_Views/store_view.jpeg";
+import storeView2
+  from "../../automotive_services_website/website_Images/Store_Views/Store_view_2.webp";
 import logo from "../../automotive_services_website/website_Images/logo/logo_no_bg.png";
 
 export const productImages = {
@@ -35,8 +37,7 @@ export const remoteImages = {
   aboutStorefront: storeView,
   aboutInventory:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuADQqGMHjAtYpUWbT_Oa47F_k7A-5bE3qSA0EkLso7oby8EZcFAnxbiY8gKrZ3_TVb2cFDRxgehnbPVb_Tb7FuH41ytlGl4DnUUl5og3b9uojYp0p7sUy6AHRV6SHGDeKBEPV8Mk1TmRlYxI0tQcmp2GmlQkevOyADhr_knEy9c81OX71jKyrZ_ZwaULDq_hIJ4sqxLpxLCUNBzS7N4LyQkxX1Q8LE5xng1krhL9dlOu7GC977qq4i2XQ",
-  aboutAdvisor:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCn_bJZWQbl6CU7bmWBw-jv5CqOJaRHmwKUsznLIogiylp2Lr63kXt_x-OSxjE0k2e8f7o91gTSRDwKG_Xeh_QemA-lQpOKIbNJruZ7mYvLLWMo2tQ5DBWtcdzO6R98rr6qjLaH3vZQ2b7uTHLcLMpNDVCQTWIHB43UGh5xviRe780Rq9J0axGWGacY4haCfb9X0ko8z8_5LgJ6dJh7N9rit9W31fvHOgOX2_lvMjRgm9iOLalBZUCa8A",
+  aboutAdvisor: storeView2,
 } as const;
 
 export const MAP_EMBED_URL =

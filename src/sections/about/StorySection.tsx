@@ -59,7 +59,7 @@ export default function StorySection() {
             <div className="relative overflow-hidden rounded-xl bg-surface-container h-44 shadow-lg">
               <img
                 className="w-full h-full object-cover"
-                alt="A friendly Austrian auto parts specialist checking a vehicle chassis number on a dual screen technical diagnostics terminal behind a clean consultation counter in Vienna with car parts on display"
+                alt="Shop entrance of Meidlinger Autoteile on Steinbauergasse Vienna: black framed glass door with a Neueröffnung sign, flanked by tall black parts-catalogue posters listing brakes, pistons and filters with the phone number"
                 src={remoteImages.aboutAdvisor}
               />
               <div className="absolute inset-0 bg-surface/40"></div>
