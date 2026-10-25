@@ -1,0 +1,17 @@
+[Unit]
+Description=Auto-KFZ website and contact API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ggh
+Group=ggh
+WorkingDirectory=/var/www/auto-kfz
+EnvironmentFile=/var/www/auto-kfz/.env
+ExecStart=/usr/local/bin/node server/index.js
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
