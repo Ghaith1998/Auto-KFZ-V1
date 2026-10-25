@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { remoteImages } from "../lib/images";
 
 type SeoProps = {
   title: string;
@@ -47,6 +48,15 @@ export default function Seo({ title, description, path = "/", noindex = false }:
       document.head.appendChild(canonical);
     }
     canonical.href = canonicalUrl;
+
+    let favicon = document.head.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.rel = "icon";
+      document.head.appendChild(favicon);
+    }
+    favicon.type = "image/png";
+    favicon.href = remoteImages.logo;
   }, [title, description, path, noindex]);
 
   return null;
