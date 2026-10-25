@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import BrandLogo from "../components/BrandLogo";
 import BrandTextLockup from "../components/BrandTextLockup";
+import { openCookieConsentBanner } from "../lib/cookieConsent";
 
 const navItemClass =
   "font-body-md text-body-md transition-colors hover:text-on-surface";
@@ -33,10 +34,9 @@ const inventoryItems = [
 ];
 
 const legalLinks = [
-  { label: "Impressum", href: "#" },
-  { label: "Datenschutzerklärung (DSGVO)", href: "#" },
-  { label: "AGB", href: "#" },
-  { label: "Cookie-Einstellungen", href: "#" },
+  { label: "Impressum", to: "/impressum" },
+  { label: "Datenschutzerklärung (DSGVO)", to: "/datenschutz" },
+  { label: "AGB", to: "/agb" },
 ];
 
 export default function Footer() {
@@ -169,14 +169,21 @@ export default function Footer() {
           </div>
           <nav className="flex flex-wrap items-center gap-space-md">
             {legalLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 className="hover:text-on-surface transition-colors"
-                href={link.href}
+                to={link.to}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
+            <button
+              type="button"
+              className="hover:text-on-surface transition-colors"
+              onClick={openCookieConsentBanner}
+            >
+              Cookie-Einstellungen
+            </button>
           </nav>
         </div>
       </div>

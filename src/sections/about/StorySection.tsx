@@ -27,7 +27,7 @@ export default function StorySection() {
           <div className="relative overflow-hidden rounded-xl bg-surface-container shadow-2xl group">
             <img
               className="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              alt="A vivid exterior view of Meidlinger Autoteile shop on Steinbauergasse Vienna with matte black storefront signage, bold red Meidlinger Autoteile lettering, window posters showing auto parts, brake calipers, alternators, and a neat workshop storefront under warm daylight"
+              alt="Exterior view of the Meidlinger Autoteile shop on Steinbauergasse Vienna: beige facade with a black MEIDLINGER AUTOTEILE sign band, banners for batteries, oils, accessories and tools, and a Neueröffnung sign in the window"
               src={remoteImages.aboutStorefront}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>

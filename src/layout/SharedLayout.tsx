@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import CookieConsent from "../components/CookieConsent";
 
 export default function SharedLayout() {
   return (
@@ -12,6 +13,7 @@ export default function SharedLayout() {
         </div>
       </main>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

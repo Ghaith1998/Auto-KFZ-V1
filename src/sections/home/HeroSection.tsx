@@ -109,7 +109,7 @@ export default function HeroSection() {
             <div className="relative w-full h-80 rounded overflow-hidden">
               <img
                 className="w-full h-full object-cover"
-                alt="Modern automotive parts shop counter in Vienna, showcasing precision brake discs, racing red calipers, throttle bodies and oil bottles under dramatic cinematic workshop spotlights in obsidian and carbon dark mode aesthetic"
+                alt="Exterior view of the Meidlinger Autoteile shop on Steinbauergasse Vienna: beige facade with a black MEIDLINGER AUTOTEILE sign band, banners for batteries, oils, accessories and tools, and a Neueröffnung sign in the window"
                 src={remoteImages.hero}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
