@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Set SITE_URL/VITE_SITE_URL to your real domain before deployment.
+Sitemap: https://example.com/sitemap.xml

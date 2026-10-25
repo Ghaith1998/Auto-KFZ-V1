@@ -15,6 +15,7 @@ const SMTP_PASS = process.env.SMTP_PASS;
 const MAIL_FROM =
   process.env.MAIL_FROM || (SMTP_USER ? `Meidlinger Autoteile Website <${SMTP_USER}>` : undefined);
 const MAIL_TO = process.env.MAIL_TO || SMTP_USER;
+const SITE_URL = (process.env.SITE_URL || process.env.VITE_SITE_URL || "http://localhost:3001").replace(/\/$/, "");
 
 const MAX_BODY = "10mb";
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
@@ -49,6 +50,17 @@ transporter.verify().then(
 const app = express();
 app.set("trust proxy", 1);
 app.use(express.json({ limit: MAX_BODY }));
+
+app.get("/robots.txt", (_req, res) => {
+  res.type("text/plain").send(`User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+});
+
+app.get("/sitemap.xml", (_req, res) => {
+  const urls = ["/", "/ueber-uns"].map((url, index) =>
+    `<url><loc>${SITE_URL}${url}</loc><changefreq>monthly</changefreq><priority>${index === 0 ? "1.0" : "0.8"}</priority></url>`
+  );
+  res.type("application/xml").send(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join("")}</urlset>`);
+});
 
 const hits = new Map();
 function rateLimited(ip) {

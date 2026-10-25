@@ -2,6 +2,7 @@ import LegalPageLayout, {
   LegalSection,
   Placeholder,
 } from "./legal/LegalPageLayout";
+import Seo from "../components/Seo";
 
 export default function ImpressumPage() {
   return (
@@ -14,6 +15,7 @@ export default function ImpressumPage() {
         </>
       }
     >
+      <Seo title="Impressum" description="Impressum von Meidlinger Autoteile in Wien-Meidling." path="/impressum" noindex />
       <LegalSection title="Unternehmer & Anbieter">
         <p>
           <strong className="text-on-surface">Meidlinger Autoteile</strong>

@@ -2,6 +2,7 @@ import LegalPageLayout, {
   LegalSection,
   Placeholder,
 } from "./legal/LegalPageLayout";
+import Seo from "../components/Seo";
 
 export default function AgbPage() {
   return (
@@ -15,6 +16,7 @@ export default function AgbPage() {
         </>
       }
     >
+      <Seo title="Allgemeine Geschäftsbedingungen" description="Allgemeine Geschäftsbedingungen von Meidlinger Autoteile." path="/agb" noindex />
       <LegalSection title="1. Geltungsbereich">
         <p>
           Diese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen

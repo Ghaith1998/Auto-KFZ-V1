@@ -2,6 +2,7 @@ import LegalPageLayout, {
   LegalSection,
   Placeholder,
 } from "./legal/LegalPageLayout";
+import Seo from "../components/Seo";
 
 export default function DatenschutzPage() {
   return (
@@ -15,6 +16,7 @@ export default function DatenschutzPage() {
         </>
       }
     >
+      <Seo title="Datenschutzerklärung" description="Datenschutzerklärung von Meidlinger Autoteile." path="/datenschutz" noindex />
       <LegalSection title="Verantwortlicher">
         <p>
           <strong className="text-on-surface">Meidlinger Autoteile</strong>
