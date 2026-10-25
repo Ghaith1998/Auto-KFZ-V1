@@ -60,6 +60,14 @@ export default function DatenschutzPage() {
           DSGVO.
         </p>
         <p>
+          Das Formular übermittelt Ihre Angaben per E-Mail an den
+          Betreiber der Website (Versand über den E-Mail-Dienst des
+          Betreibers, SMTP-Verbindung verschlüsselt). Eine optionale Datei
+          wird als Anhang mitgesendet. Die Daten werden ausschließlich zur
+          Beantwortung Ihrer Anfrage verwendet und nicht an Dritte
+          weitergegeben.
+        </p>
+        <p>
           Speicherdauer der Anfragedaten:
           <Placeholder />
         </p>

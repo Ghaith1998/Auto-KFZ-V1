@@ -1,12 +1,21 @@
+export type ContactUrgency = "today" | "soon" | "quote";
+
 export interface ContactFormValues {
   name: string;
   telefon: string;
+  email: string;
+  marke: string;
+  modell: string;
+  baujahr: string;
+  vin: string;
   description: string;
+  urgency: ContactUrgency;
 }
 
 export interface ContactFormErrors {
   name?: string;
   telefon?: string;
+  email?: string;
   description?: string;
 }
 
@@ -18,6 +27,14 @@ export const CONTACT_FORM_RULES = {
   phoneDigitsMin: 7,
   phoneDigitsMax: 15,
 } as const;
+
+export const MAX_FILE_BYTES = 8 * 1024 * 1024;
+
+export const URGENCY_LABELS: Record<ContactUrgency, string> = {
+  today: "Heute noch benötigt",
+  soon: "In 1-2 Tagen",
+  quote: "Reine Preisauskunft",
+};
 
 /**
  * Normalizes common Austrian/International phone notations:
@@ -40,6 +57,21 @@ export function isValidPhone(raw: string): boolean {
     digits.length >= CONTACT_FORM_RULES.phoneDigitsMin &&
     digits.length <= CONTACT_FORM_RULES.phoneDigitsMax
   );
+}
+
+export function isValidEmail(raw: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(raw.trim());
+}
+
+export function validateContactFile(file: File): string | undefined {
+  const accepted = file.type.startsWith("image/") || file.type === "application/pdf";
+  if (!accepted) {
+    return "Bitte laden Sie ein Bild oder eine PDF-Datei hoch.";
+  }
+  if (file.size > MAX_FILE_BYTES) {
+    return "Die Datei darf max. 8 MB groß sein.";
+  }
+  return undefined;
 }
 
 export function validateContactForm(
@@ -68,6 +100,11 @@ export function validateContactForm(
     errors.description = "Bitte beschreiben Sie das gesuchte Ersatzteil.";
   } else if (description.length < CONTACT_FORM_RULES.descriptionMinLength) {
     errors.description = `Die Beschreibung muss mindestens ${CONTACT_FORM_RULES.descriptionMinLength} Zeichen lang sein.`;
+  }
+
+  const email = values.email.trim();
+  if (email && !isValidEmail(email)) {
+    errors.email = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
   }
 
   return errors;
